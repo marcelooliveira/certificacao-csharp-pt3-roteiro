@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico1.Propriedades", "Item1.Propriedades\Topico1.Propriedades.csproj", "{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico1.Propriedades e Assessores", "Item1.Propriedades\Topico1.Propriedades e Assessores.csproj", "{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico2.Assessores", "Item2.Assessores\Topico2.Assessores.csproj", "{EDD0B7BD-086F-46A0-BC4F-CB40CA694F70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico2.Interface Explicita", "Item3.Interface Explicita\Topico2.Interface Explicita.csproj", "{18F16EA7-A31D-43AA-B680-BA5579FDA614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico3.Interface Explicita", "Item3.Interface Explicita\Topico3.Interface Explicita.csproj", "{18F16EA7-A31D-43AA-B680-BA5579FDA614}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico3.Projetar Interface", "Item4.Projetar Interface\Topico3.Projetar Interface.csproj", "{DC5BB6CB-D437-43B3-887E-BD91EDD930DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico4.Projetar Interface", "Item4.Projetar Interface\Topico4.Projetar Interface.csproj", "{DC5BB6CB-D437-43B3-887E-BD91EDD930DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico4.Classe Base", "Item5.Classe Base\Topico4.Classe Base.csproj", "{CB4BDC53-4BE5-4CEC-AF3D-16D2CBBFBE79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico5.Classe Base", "Item5.Classe Base\Topico5.Classe Base.csproj", "{CB4BDC53-4BE5-4CEC-AF3D-16D2CBBFBE79}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico6.IComparable, IEnumerable, IDisposable e IUnknown", "Item6.IComparable, IEnumerable, IDisposable e IUnknown\Topico6.IComparable, IEnumerable, IDisposable e IUnknown.csproj", "{1609FEFC-1CC8-41F1-85A1-F6F12DDE59B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico5.IComparable, IEnumerable, IDisposable e IUnknown", "Item6.IComparable, IEnumerable, IDisposable e IUnknown\Topico5.IComparable, IEnumerable, IDisposable e IUnknown.csproj", "{1609FEFC-1CC8-41F1-85A1-F6F12DDE59B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDD0B7BD-086F-46A0-BC4F-CB40CA694F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDD0B7BD-086F-46A0-BC4F-CB40CA694F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDD0B7BD-086F-46A0-BC4F-CB40CA694F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDD0B7BD-086F-46A0-BC4F-CB40CA694F70}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18F16EA7-A31D-43AA-B680-BA5579FDA614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18F16EA7-A31D-43AA-B680-BA5579FDA614}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F16EA7-A31D-43AA-B680-BA5579FDA614}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -4,26 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Item1.Propriedades
+namespace Topico1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //var funcionario = new Funcionario();
+            //Funcionario funcionario = new Funcionario();
             //funcionario.salario = 1000;
+            //Console.WriteLine(funcionario.salario);
+
+            //funcionario.salario = -1200;
+            //Console.WriteLine(funcionario.salario);
+
+            //funcionario.Salario = -1200;
 
             //funcionario.Salario = 1000;
-
             //var funcionario = new Funcionario(1000);
+            //Console.WriteLine(funcionario.Salario);
+
 
             var funcionario = new Funcionario(1000, 150);
+            //funcionario.Descontos = 170;
+            funcionario.RedefinirDescontos(190);
             Console.WriteLine(funcionario.SalarioLiquido);
-            //funcionario.Descontos = 180;
 
             //Console.WriteLine(funcionario.SalarioMinimo);
             Console.WriteLine(Funcionario.SalarioMinimo);
 
+            //var funcionario = new Funcionario(1000, 150);
+            //Console.WriteLine(funcionario.SalarioLiquido);
+            //funcionario.Descontos = 180;
+
+            //Console.WriteLine(funcionario.SalarioMinimo);
+            //Console.WriteLine(Funcionario.SalarioMinimo);
+
+
+            Console.ReadKey();
         }
     }
 
@@ -62,29 +79,15 @@ namespace Item1.Propriedades
     //        {
     //            return salario;
     //        }
-    //        set
-    //        {
-    //            if (value < 0)
-    //            {
-    //                throw new ArgumentOutOfRangeException("salário não pode ser negativo");
-    //            }
-    //            salario = value;
-    //        }
+    //        //set
+    //        //{
+    //        //    if (value < 0)
+    //        //    {
+    //        //        throw new ArgumentOutOfRangeException("salário não pode ser negativo");
+    //        //    }
+    //        //    salario = value;
+    //        //}
     //    }
-    //}
-
-
-
-    //class Funcionario
-    //{
-    //    private decimal salario;
-
-    //    public decimal Salario { get => salario; set => salario = value; }
-    //}
-
-    //class Funcionario
-    //{
-    //    public decimal Salario { get; set; }
     //}
 
     //class Funcionario
@@ -108,16 +111,39 @@ namespace Item1.Propriedades
     //    }
     //}
 
+
+    //class Funcionario
+    //{
+    //    private decimal salario;
+
+    //    public decimal Salario { get => salario; set => salario = value; }
+    //}
+
+    //class Funcionario
+    //{
+    //    public decimal Salario { get; set; }
+    //}
+
+
     //class Funcionario
     //{
     //    private readonly decimal salario;
-    //    private readonly decimal descontos;
     //    public decimal Salario
     //    {
     //        get
     //        {
     //            return salario;
     //        }
+    //    }
+    //    public decimal Descontos { get; set; }
+
+    //    public Funcionario(decimal salario)
+    //    {
+    //        if (salario < 0)
+    //        {
+    //            throw new ArgumentOutOfRangeException("salário não pode ser negativo");
+    //        }
+    //        this.salario = salario;
     //    }
 
     //    public Funcionario(decimal salario, decimal descontos)
@@ -127,29 +153,104 @@ namespace Item1.Propriedades
     //            throw new ArgumentOutOfRangeException("salário não pode ser negativo");
     //        }
     //        this.salario = salario;
-    //        this.descontos = descontos;
+    //        this.Descontos = descontos;
+    //    }
+
+    //      public void RedefinirDescontos(decimal descontos)
+    //      {
+    //          if (salario < 0)
+    //          {
+    //              throw new ArgumentOutOfRangeException("descontos não podem ser negativos");
+    //          }
+    //          this.Descontos = descontos;
+    //      }
+
+    //    public decimal SalarioLiquido
+    //    {
+    //        get
+    //        {
+    //            return salario - Descontos;
+    //        }
+    //    }
+    //}
+
+    //class Funcionario
+    //{
+    //    private readonly decimal salario;
+    //    public decimal Salario
+    //    {
+    //        get
+    //        {
+    //            return salario;
+    //        }
+    //    }
+    //    public decimal Descontos { get; private set; }
+
+    //    public Funcionario(decimal salario)
+    //    {
+    //        if (salario < 0)
+    //        {
+    //            throw new ArgumentOutOfRangeException("salário não pode ser negativo");
+    //        }
+    //        this.salario = salario;
+    //    }
+
+    //    public Funcionario(decimal salario, decimal descontos)
+    //    {
+    //        if (salario < 0)
+    //        {
+    //            throw new ArgumentOutOfRangeException("salário não pode ser negativo");
+    //        }
+    //        this.salario = salario;
+    //        this.Descontos = descontos;
+    //    }
+
+    //    public void RedefinirDescontos(decimal descontos)
+    //    {
+    //        if (salario < 0)
+    //        {
+    //            throw new ArgumentOutOfRangeException("descontos não podem ser negativos");
+    //        }
+    //        this.Descontos = descontos;
     //    }
 
     //    public decimal SalarioLiquido
     //    {
     //        get
     //        {
-    //            return salario - descontos;
+    //            return salario - Descontos;
     //        }
     //    }
     //}
 
     class Funcionario
     {
-        private static readonly decimal salarioMinimo = 700;
+        private static decimal salarioMinimo = 800;
+        public static decimal SalarioMinimo
+        {
+            get
+            {
+                return salarioMinimo;
+            }
+        }
+
         private readonly decimal salario;
-        private decimal descontos;
         public decimal Salario
         {
             get
             {
                 return salario;
             }
+        }
+        public decimal Descontos { get; private set; }
+
+        public Funcionario(decimal salario)
+        {
+            if (salario < 0)
+            {
+                throw new ArgumentOutOfRangeException("salário não pode ser negativo");
+            }
+            this.salario = salario;
         }
 
         public Funcionario(decimal salario, decimal descontos)
@@ -159,36 +260,26 @@ namespace Item1.Propriedades
                 throw new ArgumentOutOfRangeException("salário não pode ser negativo");
             }
             this.salario = salario;
-            this.descontos = descontos;
+            this.Descontos = descontos;
+        }
+
+        public void RedefinirDescontos(decimal descontos)
+        {
+            if (salario < 0)
+            {
+                throw new ArgumentOutOfRangeException("descontos não podem ser negativos");
+            }
+            this.Descontos = descontos;
         }
 
         public decimal SalarioLiquido
         {
             get
             {
-                return salario - descontos;
+                return salario - Descontos;
             }
         }
 
-        public decimal Descontos
-        {
-            get
-            {
-                return descontos;
-            }
-            private set
-            {
-                descontos = value;
-            }
-        }
-
-        public static decimal SalarioMinimo
-        {
-            get
-            {
-                return salarioMinimo;
-            }
-        }
     }
 }
 
