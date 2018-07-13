@@ -10,133 +10,127 @@ namespace Topico2
     {
         static void Main(string[] args)
         {
-            //Uma interface não pode ser instanciada diretamente
-            //IPessoa pessoa = new IPessoa();
+            //Televisao televisao = new Televisao();
+            //Abajur abajur = new Abajur();
+            //Lanterna lanterna = new Lanterna();
+            //Radio radio = new Radio();
 
-            //IPessoa pessoa = new Pessoa();
-            //pessoa.CPF = "123.456.789-00";
-            //pessoa.Nome = "josé da silva";
-            //pessoa.DataNascimento = new DateTime(2000, 1, 1);
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
+            //abajur = new Televisao();
+            //televisao = new Abajur();
+            //radio = new Lanterna();
+            //lanterna = new Radio();
 
+            IEletrodomestico eletro1 = new Televisao();
+            IEletrodomestico eletro2 = new Abajur();
+            IEletrodomestico eletro3 = new Lanterna();
+            IEletrodomestico eletro4 = new Radio();
 
-
-
-
-
-            //IPessoa pessoa = new Pessoa
-            //{
-            //    CPF = "123.456.789-00",
-            //    Nome = "josé da silva",
-            //    DataNascimento = new DateTime(2000, 1, 1)
-            //};
-            ////pessoa.CargaHorariaMensal = 168;
-            ////pessoa.EfeturarPagamento();
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
-
-
-
-            //IPessoa pessoa = new Funcionario(1500)
-            //{
-            //    CPF = "123.456.789-00",
-            //    Nome = "josé da silva",
-            //    DataNascimento = new DateTime(2000, 1, 1)
-            //};
-            //pessoa.CargaHorariaMensal = 168;
-            //pessoa.EfeturarPagamento();
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
-            //Funcionario pessoa = new Funcionario(1500)
-            //{
-            //    CPF = "123.456.789-00",
-            //    Nome = "josé da silva",
-            //    DataNascimento = new DateTime(2000, 1, 1)
-            //};
-            //pessoa.CargaHorariaMensal = 168;
-            //pessoa.EfeturarPagamento();
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
-            Funcionario funcionario = new Funcionario(1500);
-            var pessoa = (IPessoa)funcionario;
-            pessoa.CPF = "123.456.789-00";
-            pessoa.Nome = "josé da silva";
-            pessoa.DataNascimento = new DateTime(2000, 1, 1);
-            funcionario.CargaHorariaMensal = 168;
-            funcionario.EfeturarPagamento();
-            pessoa.CrachaGerado += (s, e) =>
-            {
-                Console.WriteLine("Crachá gerado");
-            };
-            pessoa.GerarCracha();
+            eletro2 = new Televisao();
+            eletro1 = new Abajur();
+            eletro4 = new Lanterna();
+            eletro3 = new Radio();
 
             Console.ReadKey();
         }
     }
 
-    interface IPessoa
+    class Televisao : IEletrodomestico, IRadioReceptor
     {
-        //propriedades
-        string CPF { get; set; }
-        string Nome { get; set; }
-        DateTime DataNascimento { get; set; }
+        public event EventHandler Ligou;
+        public event EventHandler Desligou;
 
-        //métodos
-        void GerarCracha();
+        //public double FrequenciaDoCanal { get; set; }
+        public double Frequencia { get; set; }
 
-        //eventos
-        event EventHandler CrachaGerado;
-    }
-
-    abstract class Pessoa : IPessoa
-    {
-        string IPessoa.CPF { get; set; }
-        string IPessoa.Nome { get; set; }
-        DateTime IPessoa.DataNascimento { get; set; }
-
-        public event EventHandler CrachaGerado;
-
-        void IPessoa.GerarCracha()
+        public void Desligar()
         {
-            if (CrachaGerado != null)
+        }
+
+        public void Ligar()
+        {
+            if (Ligou != null)
             {
-                CrachaGerado(this, new EventArgs());
+                Ligou(this, new EventArgs());
             }
         }
     }
 
-    sealed class Funcionario : Pessoa
+    class Abajur : IEletrodomestico
     {
-        public decimal Salario { get; }
-        public int CargaHorariaMensal { get; set; }
-        
-        public Funcionario(decimal salario)
+        public int PotenciaDaLampada { get; set; }
+
+        public event EventHandler Ligou;
+        public event EventHandler Desligou;
+
+        public void Desligar()
         {
-            Salario = salario;
         }
 
-        public void EfeturarPagamento()
+        public void Ligar()
         {
-            Console.WriteLine("Pagamento Efetuado");
         }
+    }
+
+    class Lanterna : IEletrodomestico
+    {
+        public double PotenciaDaLampada { get; set; }
+
+        public event EventHandler Ligou;
+        public event EventHandler Desligou;
+
+        public void Desligar()
+        {
+        }
+
+        public void Ligar()
+        {
+        }
+    }
+
+    class Radio : IEletrodomestico, IRadioReceptor
+    {
+        public event EventHandler Ligou;
+        public event EventHandler Desligou;
+
+        //public double FrequenciaDaEstacao { get; set; }
+        public double Frequencia { get; set; }
+
+        public void Desligar()
+        {
+        }
+
+        public void Ligar()
+        {
+        }
+    }
+
+    //interface IEletrodomestico
+    //{
+    //    //métodos
+    //    void Ligar();
+    //    void Desligar();
+    //}
+
+    interface IEletrodomestico
+    {
+        //métodos
+        void Ligar();
+        void Desligar();
+
+        //eventos
+        event EventHandler Ligou;
+        event EventHandler Desligou;
+    }
+
+    //interface IIluminacao
+    //{
+    //    //propriedades
+    //    double PotenciaDaLampada { get; set; }
+    //}
+
+    interface IRadioReceptor
+    {
+        //propriedades
+        double Frequencia { get; set; }
     }
 }
