@@ -40,6 +40,15 @@ namespace Topico1
             //Console.WriteLine(Funcionario.SalarioMinimo);
 
 
+
+
+
+            Console.WriteLine(funcionario.PropriedadePublic);
+            //Console.WriteLine(funcionario.PropriedadeProtected);
+            Console.WriteLine(funcionario.PropriedadeProtectedInternal);
+            Console.WriteLine(funcionario.PropriedadeInternal);
+            //Console.WriteLine(funcionario.PropriedadePrivate);
+
             Console.ReadKey();
         }
     }
@@ -281,8 +290,10 @@ namespace Topico1
         }
 
         public int PropriedadePublic { get; set; }
+        protected int PropriedadeProtected { get; set; }
+        protected internal int PropriedadeProtectedInternal { get; set; }
         private int PropriedadePrivate { get; set; }
-        protected int PropriedadeInternal { get; set; }
+        internal int PropriedadeInternal { get; set; }
     }
 }
 

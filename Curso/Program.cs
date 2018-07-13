@@ -20,6 +20,8 @@ namespace Curso
             Console.WriteLine(Funcionario.SalarioMinimo);
 
             Console.WriteLine(funcionario.PropriedadePublic);
+            //Console.WriteLine(funcionario.PropriedadeProtected);
+            //Console.WriteLine(funcionario.PropriedadeProtectedInternal);
             //Console.WriteLine(funcionario.PropriedadeInternal);
             //Console.WriteLine(funcionario.PropriedadePrivate);
 
