@@ -49,8 +49,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Item1.Propriedades\Topico1.Propriedades e Acessadores.csproj">
-      <Project>{423af7f9-532a-45db-b43a-5ebfab78baa6}</Project>
+    <ProjectReference Include="..\Topico1.Propriedades e Acessadores\Topico1.Propriedades e Acessadores.csproj">
+      <Project>{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}</Project>
       <Name>Topico1.Propriedades e Acessadores</Name>
     </ProjectReference>
   </ItemGroup>
