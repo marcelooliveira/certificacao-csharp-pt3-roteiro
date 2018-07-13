@@ -223,7 +223,7 @@ namespace Topico1
     //    }
     //}
 
-    class Funcionario
+    public class Funcionario
     {
         private static decimal salarioMinimo = 800;
         public static decimal SalarioMinimo
@@ -280,6 +280,9 @@ namespace Topico1
             }
         }
 
+        public int PropriedadePublic { get; set; }
+        private int PropriedadePrivate { get; set; }
+        protected int PropriedadeInternal { get; set; }
     }
 }
 

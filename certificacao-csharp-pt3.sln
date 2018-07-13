@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico4.Classe Base", "Item
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topico5.IComparable, IEnumerable, IDisposable e IUnknown", "Item6.IComparable, IEnumerable, IDisposable e IUnknown\Topico5.IComparable, IEnumerable, IDisposable e IUnknown.csproj", "{1609FEFC-1CC8-41F1-85A1-F6F12DDE59B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curso", "Curso\Curso.csproj", "{2501F4B3-0C94-4372-A774-145388E89F14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1609FEFC-1CC8-41F1-85A1-F6F12DDE59B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1609FEFC-1CC8-41F1-85A1-F6F12DDE59B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1609FEFC-1CC8-41F1-85A1-F6F12DDE59B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2501F4B3-0C94-4372-A774-145388E89F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2501F4B3-0C94-4372-A774-145388E89F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2501F4B3-0C94-4372-A774-145388E89F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2501F4B3-0C94-4372-A774-145388E89F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
