@@ -10,124 +10,85 @@ namespace Topico4
     {
         static void Main(string[] args)
         {
-            //Uma interface não pode ser instanciada diretamente
-            //IPessoa pessoa = new IPessoa();
-
-            //IPessoa pessoa = new Pessoa();
-            //pessoa.CPF = "123.456.789-00";
-            //pessoa.Nome = "josé da silva";
-            //pessoa.DataNascimento = new DateTime(2000, 1, 1);
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
-
-
-
-
-            //IPessoa pessoa = new Pessoa
-            //{
-            //    CPF = "123.456.789-00",
-            //    Nome = "josé da silva",
-            //    DataNascimento = new DateTime(2000, 1, 1)
-            //};
-            ////pessoa.CargaHorariaMensal = 168;
-            ////pessoa.EfeturarPagamento();
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
-
-
-
-            //IPessoa pessoa = new Funcionario(1500)
-            //{
-            //    CPF = "123.456.789-00",
-            //    Nome = "josé da silva",
-            //    DataNascimento = new DateTime(2000, 1, 1)
-            //};
-            //pessoa.CargaHorariaMensal = 168;
-            //pessoa.EfeturarPagamento();
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
-            //Funcionario pessoa = new Funcionario(1500)
-            //{
-            //    CPF = "123.456.789-00",
-            //    Nome = "josé da silva",
-            //    DataNascimento = new DateTime(2000, 1, 1)
-            //};
-            //pessoa.CargaHorariaMensal = 168;
-            //pessoa.EfeturarPagamento();
-            //pessoa.CrachaGerado += (s, e) =>
-            //{
-            //    Console.WriteLine("Crachá gerado");
-            //};
-            //pessoa.GerarCracha();
-
-
             Funcionario funcionario = new Funcionario(1500);
-            var pessoa = (IPessoa)funcionario;
-            pessoa.CPF = "123.456.789-00";
-            pessoa.Nome = "josé da silva";
-            pessoa.DataNascimento = new DateTime(2000, 1, 1);
-            funcionario.CargaHorariaMensal = 168;
+            funcionario.CPF = "123.456.789-00";
+            funcionario.Nome = "josé da silva";
+            funcionario.DataNascimento = new DateTime(2000, 1, 1);
+
+            ((IFuncionario)funcionario).CargaHorariaMensal = 168;
+            ((IPlantonista)funcionario).CargaHorariaMensal = 32;
             funcionario.EfeturarPagamento();
-            pessoa.CrachaGerado += (s, e) =>
+            funcionario.CrachaGerado += (s, e) =>
             {
                 Console.WriteLine("Crachá gerado");
             };
-            pessoa.GerarCracha();
+
+            ((IFuncionario)funcionario).GerarCracha();
+            ((IPlantonista)funcionario).GerarCracha();
+
+
+            Cliente cliente = new Cliente()
+            {
+                CPF = "789.456.123-99",
+                Nome = "maria de souza",
+                DataNascimento = new DateTime(1995, 1, 1),
+                UltimaCompra = new DateTime(2018, 2, 3),
+                ValorUltimaCompra = 1000
+            };
+
+            //Pessoa pessoa = new Pessoa()
+            //{
+            //    CPF = "000.111.222-33",
+            //    Nome = "fulano de tal",
+            //    DataNascimento = new DateTime(1998, 4, 5)
+            //};
 
             Console.ReadKey();
         }
     }
 
-    interface IPessoa
+    interface IFuncionario : IPessoa
     {
-        //propriedades
-        string CPF { get; set; }
-        string Nome { get; set; }
-        DateTime DataNascimento { get; set; }
+        event EventHandler CrachaGerado;
 
-        //métodos
         void GerarCracha();
 
-        //eventos
-        event EventHandler CrachaGerado;
+        decimal Salario { get; }
+        int CargaHorariaMensal { get; set; }
+
+        void EfeturarPagamento();
     }
 
-    abstract class Pessoa : IPessoa
+    interface IPlantonista
     {
-        string IPessoa.CPF { get; set; }
-        string IPessoa.Nome { get; set; }
-        DateTime IPessoa.DataNascimento { get; set; }
+        void GerarCracha();
+        int CargaHorariaMensal { get; set; }
+    }
 
+    class Funcionario : Pessoa, IFuncionario, IPlantonista
+    {
         public event EventHandler CrachaGerado;
 
-        void IPessoa.GerarCracha()
+        void IFuncionario.GerarCracha()
         {
             if (CrachaGerado != null)
             {
                 CrachaGerado(this, new EventArgs());
             }
         }
-    }
 
-    sealed class Funcionario : Pessoa
-    {
+        void IPlantonista.GerarCracha()
+        {
+            if (CrachaGerado != null)
+            {
+                CrachaGerado(this, new EventArgs());
+            }
+        }
+
         public decimal Salario { get; }
-        public int CargaHorariaMensal { get; set; }
+
+        int IFuncionario.CargaHorariaMensal { get; set; }
+        int IPlantonista.CargaHorariaMensal { get; set; }
 
         public Funcionario(decimal salario)
         {
@@ -138,5 +99,30 @@ namespace Topico4
         {
             Console.WriteLine("Pagamento Efetuado");
         }
+    }
+
+    sealed class Cliente : Pessoa
+    {
+        public DateTime UltimaCompra { get; set; }
+        public decimal ValorUltimaCompra { get; set; }
+    }
+
+    //class ClienteEspecial: Cliente
+    //{
+
+    //}
+
+    abstract class Pessoa : IPessoa
+    {
+        public string CPF { get; set; }
+        public string Nome { get; set; }
+        public DateTime DataNascimento { get; set; }
+    }
+
+    interface IPessoa
+    {
+        string CPF { get; set; }
+        string Nome { get; set; }
+        DateTime DataNascimento { get; set; }
     }
 }
