@@ -1,36 +1,47 @@
-﻿You are creating a class named Employee. The class exposes a string property named
-EmployeeType. The following code segment defines the Employee class. (Line numbers are
-included for reference only.)
+﻿Você está criando uma classe chamada `Funcionario`.
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/22.jpg)
+A classe expõe uma propriedade de string chamada `TipoFuncionario`.
+O segmento de código a seguir define a classe `Funcionario`
+(Os números das linhas são incluído apenas para referência.)
 
-The EmployeeType property value must be accessed and modified only by code within the
-Employee class or within a class derived from the Employee class.
-You need to ensure that the implementation of the EmployeeType property meets the
-requirements.
-Which two actions should you perform? (Each correct answer represents part of the
-complete solution. Choose two.)
+```
+01 public class Funcionario
+02 {
+03 	internal string TipoFuncionario
+04 	{
+05		get;
+06 		set;
+07 	}
+08 }
+```
 
-A.
-Replace line 05 with the following code segment: 
+O valor da propriedade `TipoFuncionario` deve ser acessado e modificado apenas pelo código dentro da
+classe `Funcionario` ou dentro de uma classe derivada da classe `Funcionario`.
+Você precisa garantir que a implementação da propriedade `TipoFuncionario` atenda
+os requisitos.
+
+Quais ações você deve executar? (Cada resposta correta representa parte do solução completa. Escolha duas.)
+
+
+Substitua a linha 05 pelo seguinte segmento de código:
 protected get;
 
 B.
-Replace line 06 with the following code segment: 
+Substitua a linha 06 pelo seguinte segmento de código:
 private set;
 
 C.
-Replace line 03 with the following code segment: 
-public string EmployeeType
+Substitua a linha 03 pelo seguinte segmento de código:
+public string TipoFuncionario
 
 D.
-Replace line 05 with the following code segment: 
+Substitua a linha 05 pelo seguinte segmento de código:
 private get;
 
 E.
-Replace line 03 with the following code segment: 
-protected string EmployeeType
+Substitua a linha 03 pelo seguinte segmento de código:
+protected string TipoFuncionario
 
 F.
-Replace line 06 with the following code segment: 
+Substitua a linha 06 pelo seguinte segmento de código:
 protected set;

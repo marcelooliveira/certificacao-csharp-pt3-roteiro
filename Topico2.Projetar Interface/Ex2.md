@@ -1,15 +1,35 @@
-﻿# Which two code segments can you use to achieve this goal?
+﻿Você está desenvolvendo um aplicativo. O aplicativo inclui classes denominadas `Lobo` e
+`Carnivoro` e uma interface chamada `ICarnivoro`.
+A classe `Lobo` deve atender aos seguintes requisitos:
+Ele deve herdar da classe `Carnivoro` ou implementar a interface `ICarnivoro`.
+Ele deve ser herdado por outras classes no aplicativo.
+Você precisa garantir que a classe `Lobo` atenda aos requisitos.
+Quais segmentos de código você pode usar para atingir esse objetivo? (Cada resposta correta apresenta
+uma solução completa. Escolha dois.)
 
-You are developing an application. The application includes classes named Mammal and
-Animal and an interface named IAnimal.
-The Mammal class must meet the following requirements:
-It must either inherit from the Animal class or implement the IAnimal interface.
-It must be inheritable by other classes in the application.
-You need to ensure that the Mammal class meets the requirements.
-Which two code segments can you use to achieve this goal? (Each correct answer presents
-a complete solution. Choose two.)
+A.
+abstract class Lobo : ICarnivoro
+{
+	...
+}
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/69.jpg)
+B.
+sealed class Lobo : ICarnivoro
+{
+	...
+}
 
-* Option A
-* Option C
+C.
+abstract class Lobo : Carnivoro
+{
+	...
+}
+
+D.
+sealed class Lobo : Carnivoro
+{
+	...
+}
+
+* Opção A
+* Opção C

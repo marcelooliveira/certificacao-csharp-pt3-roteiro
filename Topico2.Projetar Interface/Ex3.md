@@ -1,26 +1,47 @@
-﻿# Which signature should you use for each method?
+﻿# Qual assinatura você deve usar para cada método?
 
-You are developing the following classes named:
-Class1
-Class2
-Class3
-All of the classes will be part of a single assembly named Assembly.dll. Assembly.dll will be
-used by multiple applications.
-All of the classes will implement the following interface, which is also part ofAssembly.dll:
+Você está desenvolvendo as seguintes classes com os nomes:
 
+* `Classe1`
+* `Classe2`
+* `Classe3`
+
+Todas as classes farão parte de um único assembly chamado `Biblioteca.dll`. `Biblioteca.dll` será usado por vários aplicativos.
+
+Todas as classes implementarão a seguinte interface, que também faz parte de Biblioteca.dll:
+
+```
 public interface Interface1
 {
-void Method1(decimal amount);
-void Method2(decimal amount);
+void Metodo1(decimal quantia);
+void Metodo2(decimal quantia);
 }
+```
 
-You need to ensure that the Method2 method for the Class3 class can be executed only
-when instances of the class are accessed through the Interface1 interface. The solution
-must ensure that calls to the Method1 method can be made either through the interface or
-through an instance of the class.
-Which signature should you use for each method? (To answer, select the appropriate
-signature for each method in the answer area.)
+Você precisa garantir que o método `Metodo2` para a classe `Classe3` possa ser executado somente quando instâncias da classe são acessadas através da interface `Interface1`. A solução deve assegurar que as chamadas para o método `Metodo1` possam ser feitas através da interface ou através de uma instância da classe.
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/154.jpg)
+Qual assinatura você deve usar para cada método? (Para responder, selecione o assinatura para cada método na área de resposta.)
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/155.jpg)
+A.
+public void Metodo1(decimal quantia)
+void Interface1.Metodo2(decimal quantia)
+
+B.
+public void Metodo1(decimal quantia)
+internal void Metodo2(decimal quantia)
+
+C.
+internal void Metodo1(decimal quantia)
+void Interface1.Metodo2(decimal quantia)
+
+D.
+internal void Metodo1(decimal quantia)
+internal void Metodo2(decimal quantia)
+
+E.
+public void Metodo1(decimal quantia)
+public void Metodo2(decimal quantia)
+
+F.
+void Interface1.Metodo1(decimal quantia)
+void Interface1.Metodo2(decimal quantia)
