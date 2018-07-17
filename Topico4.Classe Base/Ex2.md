@@ -1,32 +1,77 @@
-﻿# Which two code segments should you use?
+﻿# Quais segmentos de código você deve usar?
 
-You are developing an application that includes the following code segment:
+Você está desenvolvendo um aplicativo que inclui o seguinte segmento de código:
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/297.jpg)
+```
+interface IHome
+{
+	void Start();
+}
 
-You need to implement both Start() methods in a derived class named UseStart that uses
-the Start() method of each interface.
-Which two code segments should you use? (Each correct answer presents part of the
-solution. Choose two.)
+interface IOffice
+{
+	void Start();
+}
+```
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/298.jpg)
+Você precisa implementar ambos os métodos Start() em uma classe derivada chamada UseStart que usa o método Start() de cada interface.
 
+Quais segmentos de código você deve usar? (Cada resposta correta apresenta parte do solução. Escolha dois.)
 
-* Option B
+A.
+```
+var starter = new UseStart();
+((IHome, IOffice)starter).Start();
+```
 
-* Option E
+B.
+```
+class UseStart
+{
+	public void IHome.Start()
+	{
+		...
+	}
+	
+	public void IOffice.Start()
+	{
+		...
+	}
+}
+```
 
-Explanation:
+C.
+```
+class UseStart : IHome, IOffice
+{
+	void IHome.Start()
+	{
+		...
+	}
+	
+	void IOffice.Start()
+	{
+		...
+	}
+}
+```
 
-B:
-* Implementing Multiple Interfaces
-A class can implement multiple interfaces using the following syntax:
-C#
-public class CDAndDVDComboPlayer : ICDPlayer, IDVDPlayer
-If a class implements more than one interface where there is ambiguity in the names of
-members, it is resolved using the full qualifier for the property or method name. In other
-words, the derived class can resolve the conflict by using the fully qualified name for the
-method to indicate to which interface it belongs
-* In C#, both inheritance and interface implementation are defined by the : operator,
-equivalent to extends and implements in Java. The base class should always be leftmost in
-the class declaration.
+D.
+```
+var starter = new UseStart();
+((IHome)starter).Start();
+((IOffice)starter).Start();
+```
+
+E.
+```
+var starter = new UseStart();
+starter.Start();
+starter.Start();
+```
+
+F.
+```
+var starter = new UseStart();
+starter.Start();
+```
