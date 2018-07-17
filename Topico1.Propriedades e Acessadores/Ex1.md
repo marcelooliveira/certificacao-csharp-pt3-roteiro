@@ -1,13 +1,13 @@
-﻿which form should you implement the score member?
-seenagapeMay 25, 2017
-You are creating a class named Game.
-The Game class must meet the following requirements:
+﻿De que maneira você deve implementar o membro Voltagem?
 
-* Include a member that represents the score for a Game instance.
-* Allow external code to assign a value to the score member.
-* Restrict the range of values that can be assigned to the score member.
-You need to implement the score member to meet the requirements.
-In which form should you implement the score member?
+Você está criando uma classe chamada Eletrodomestico.
+A classe Eletrodomestico deve atender aos seguintes requisitos:
+
+* Inclua um membro que represente a voltagem de uma instância de Eletrodomestico.
+* Permitir que um código externo atribuia um valor ao membro Voltagem.
+* Restringir o intervalo de valores que podem ser atribuídos ao membro Voltagem.
+Você precisa implementar o membro Voltagem para atender aos requisitos.
+De que forma você deve implementar o Voltagem?
 
 A. protected field
 

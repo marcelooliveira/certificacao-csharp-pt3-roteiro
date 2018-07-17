@@ -1,24 +1,19 @@
-﻿# which form should you implement the rate member?
+﻿De que maneira você deve implementar o membro Juros?
 
-You are creating a class named Loan.
-The Loan class must meet the following requirements:
-Include a member that represents the rate for a Loan instance.
-Allow external code to assign a value to the rate member.
-Restrict the range of values that can be assigned to the rate member.
-You need to implement the rate member to meet the requirements.
-In which form should you implement the rate member?
+Você está criando uma classe chamada Emprestimo.
+A classe Emprestimo deve atender aos seguintes requisitos:
 
-A.
-public static property
+* Inclua um membro que represente a taxa de juros de uma instância de Emprestimo.
+* Permitir que um código externo atribuia um valor ao membro Juros.
+* Restringir o intervalo de valores que podem ser atribuídos ao membro Juros.
+Você precisa implementar o membro Juros para atender aos requisitos.
 
-B.
-public property
+De que forma você deve implementar o Juros?
 
-C.
-public static field
+A. protected field
 
-D.
-protected field
+B. public static field
 
+C. public static property
 
-Answer: B. public property
+D. public property
