@@ -13,8 +13,8 @@ Todas as classes implementarão a seguinte interface, que também faz parte de B
 ```
 public interface Interface1
 {
-void Metodo1(decimal quantia);
-void Metodo2(decimal quantia);
+    void Metodo1(decimal quantia);
+    void Metodo2(decimal quantia);
 }
 ```
 
