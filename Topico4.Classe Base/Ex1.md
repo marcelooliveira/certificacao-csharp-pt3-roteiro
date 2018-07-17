@@ -1,39 +1,64 @@
-﻿# Which four lines of code should you use in sequence?
+﻿# Escolha uma seqüência de linhas de código
 
-You are developing a C# console application that outputs information to the screen. The
-following code segments implement the two classes responsible for making calls to the
-Console object:
+Você está desenvolvendo um aplicativo de console C# que gera informações na tela.
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/203.jpg)
+Os seguinte segmentos de código implementam as duas classes responsáveis ​​por fazer chamadas para o objeto do console:
 
-When the application is run, the console output must be the following text:
-Log started
-Base: Log continuing
-Finished
-You need to ensure that the application outputs the correct text.
-Which four lines of code should you use in sequence? (To answer, move the appropriate
-classes from the list of classes to the answer area and arrange them in the correct order.)
+```
+abstract class BaseLogger
+{
+	public virtual void Log(string mensagem)
+	{
+		Console.WriteLine("Base: " + mensagem);
+	}
+	
+	public virtual LogCompletado()
+	{
+		Console.WriteLine("Completado");
+	}
+}
 
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/204.jpg)
+class Logger : BaseLogger
+{
+	public override void Log(string mensagem)
+	{
+		Console.WriteLine(mensagem);
+	}
+	
+	public new void LogCompletado()
+	{
+		Console.WriteLine("Terminado");
+	}
+}
+```
 
-Answer: See the explanation.
+Quando o aplicativo é executado, a saída do console deve ser o seguinte texto:
 
-Explanation:
+```
+Log iniciado
+Base: Log sendo processado
+Terminado
+```
 
-Box 1:
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/205.jpg)
+Você precisa garantir que o aplicativo produza o texto correto.
+Quais quatro linhas de código você deve usar em seqüência? (Para responder, mova o
+classes da lista de classes para a área de resposta e organizá-las na ordem correta.)
 
-Box 2:
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/206.jpg)
+```
+1. logger.Log("Base: Log sendo processado");
+2. ((BaseLogger)logger).Log("Log sendo processado");
+3. var logger = new BaseLogger();
+4. ((Logger)logger).LogCompletado();
+5. logger.Log("Log iniciado");
+6. BaseLogger logger = new Logger();
+7. logger.LogCompletado();
+```
 
-Box 3:
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/207.jpg)
+Resposta:
 
-Box 4:
-![](https://cdn.briefmenow.org/wp-content/uploads/70-483-v2/208.jpg)
-
-Note:
-* The abstract keyword enables you to create classes and class members that are
-incomplete and must be implemented in a derived class.
-* An abstract class cannot be instantiated. The purpose of an abstract class is to provide a
-common definition of a base class that multiple derived classes can share.
+```
+6. BaseLogger logger = new Logger();
+5. logger.Log("Log iniciado");
+1. logger.Log("Base: Log sendo processado");
+7. logger.LogCompletado();
+```
