@@ -233,7 +233,14 @@ namespace Topico5
 
         public int CompareTo(object obj)
         {
+            if (obj == null) return 1;
+
             Aluno outro = obj as Aluno;
+            if (outro == null)
+            {
+                throw new ArgumentException("Objeto não é um aluno");
+            }
+
             int resultado = this.DataNascimento.CompareTo(outro.DataNascimento);
             if (resultado == 0)
             {

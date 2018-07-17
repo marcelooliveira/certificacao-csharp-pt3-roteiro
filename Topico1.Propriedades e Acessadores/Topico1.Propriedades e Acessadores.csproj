@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Ex3.md" />
     <None Include="Ex2.md" />
     <None Include="Ex1.md" />
   </ItemGroup>
