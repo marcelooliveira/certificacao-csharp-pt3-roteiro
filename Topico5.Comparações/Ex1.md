@@ -1,12 +1,14 @@
-﻿# Which two interfaces should you implement?
+﻿# Quais interfaces você deve implementar?
 
-You are modifying an existing application that manages employee payroll. The application
-includes a class named PayrollProcessor. The PayrollProcessor class connects to a payroll
-database and processes batches of paychecks once a week.
-You need to ensure that the PayrollProcessor class supports iteration and releases
-database connections after the batch processing completes.
-Which two interfaces should you implement? (Each correct answer presents part of the
-complete solution. Choose two.)
+Você está modificando um aplicativo existente que gerencia a folha de pagamento do funcionário.
+A aplicação inclui uma classe chamada `FolhaDePagamento`. A classe `FolhaDePagamento` se conecta a uma folha de pagamento banco de dados e processa lotes de contracheques uma vez por semana.
+
+Você precisa garantir que a classe `FolhaDePagamento`:
+
+* suporta iteração dentro de um loop
+* libera as conexões de banco de dados após o processamento em lote ser concluído
+
+Quais são as duas interfaces que você deve implementar? (Cada resposta correta apresenta parte do solução completa. Escolha dois.)
 
 A.
 IEquatable
@@ -19,11 +21,3 @@ IDisposable
 
 D.
 IComparable
-
-Explanation:
-* B: IEnumerable
-* C: IDisposable Interface
-
-Exposes an enumerator, which supports a simple iteration over a non-generic collection.
-Defines a method to release allocated resources.
-The primary use of this interface is to release unmanaged resources.
