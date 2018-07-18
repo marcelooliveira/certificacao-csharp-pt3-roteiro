@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ensaio\Ensaio.csproj">
+      <Project>{9016DB6E-639F-4464-9E95-5328AF658E14}</Project>
+      <Name>Ensaio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Topico1.Propriedades e Acessadores\Topico1.Propriedades e Acessadores.csproj">
       <Project>{423AF7F9-532A-45DB-B43A-5EBFAB78BAA6}</Project>
       <Name>Topico1.Propriedades e Acessadores</Name>
