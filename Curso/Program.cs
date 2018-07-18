@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ensaio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,12 @@ namespace Curso
             Console.WriteLine(funcionario.SalarioLiquido);
             Console.WriteLine(Funcionario.SalarioMinimo);
 
-            Console.WriteLine(funcionario.PropriedadePublic);
-            //Console.WriteLine(funcionario.PropriedadeProtected);
-            //Console.WriteLine(funcionario.PropriedadeProtectedInternal);
-            //Console.WriteLine(funcionario.PropriedadeInternal);
-            //Console.WriteLine(funcionario.PropriedadePrivate);
-
+            MinhaClasse minhaClasse = new MinhaClasse();
+            Console.WriteLine(minhaClasse.A);
+            //Console.WriteLine(minhaClasse.B);
+            //Console.WriteLine(minhaClasse.C);
+            //Console.WriteLine(minhaClasse.D);
+            //Console.WriteLine(minhaClasse.E);
             Console.ReadKey();
         }
     }

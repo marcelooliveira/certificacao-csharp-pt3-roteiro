@@ -288,12 +288,6 @@ namespace Topico1
                 return salario - Descontos;
             }
         }
-
-        public int PropriedadePublic { get; set; }
-        protected int PropriedadeProtected { get; set; }
-        protected internal int PropriedadeProtectedInternal { get; set; }
-        private int PropriedadePrivate { get; set; }
-        internal int PropriedadeInternal { get; set; }
     }
 }
 
